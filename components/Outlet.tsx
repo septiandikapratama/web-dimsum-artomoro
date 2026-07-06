@@ -1,12 +1,46 @@
 import SectionHeading from "./ui/SectionHeading";
+import { toWhatsAppHref } from "@/lib/phone";
 
-const outlets = [
-  { num: "01", name: "Artomoro Simpang Kampus" },
-  { num: "02", name: "Artomoro Batanghari" },
-  { num: "03", name: "Artomoro Bandar Lampung" },
-  { num: "04", name: "[Nama Outlet 4]" },
-  { num: "05", name: "[Nama Outlet 5]" },
-  { num: "06", name: "[Nama Outlet 6]" },
+export const outlets = [
+  {
+    num: "01",
+    name: "Artomoro 53 Sekampung",
+    address:
+      "Teras Alfamart Dam 53, Jl. Raya Batanghari, Selo Rejo, Kec. Batanghari, Kabupaten Lampung Timur",
+    whatsapp: "0831-6802-8473",
+  },
+  {
+    num: "02",
+    name: "Artomoro 54 Sekampung",
+    address: "Pojok Indomaret 48, Jl. Raya Sidomulyo, Kec. Sekampung, Kab. Lampung Timur",
+    whatsapp: "0877-1477-8815",
+  },
+  {
+    num: "03",
+    name: "Artomoro Batanghari",
+    address: "Jl Raya Batanghari, Kec. Batanghari, Kab. Lampung Timur",
+    whatsapp: "0813-9307-3293",
+  },
+  {
+    num: "04",
+    name: "Artomoro Simpang Kampus",
+    address: "Jl. Ki Hajar Dewantara No.5, Iringmulyo, Kec. Metro Timur, Kota Metro, Lampung",
+    whatsapp: "0878-6280-6718",
+    isMain: true,
+  },
+  {
+    num: "05",
+    name: "Artomoro 29 Banjarsari",
+    address:
+      "Dekat Bunderan 29, Jl. Pattimura No.29, Banjarsari, Kec. Metro Utara, Kota Metro, Lampung",
+    whatsapp: "0857-8942-4387",
+  },
+  {
+    num: "06",
+    name: "Artomoro Way Halim",
+    address: "Jl. Urip Sumoharjo No.117, Way Halim Permai, Kec. Sukarame, Kota Bandar Lampung",
+    whatsapp: "0857-6472-2971",
+  },
 ];
 
 export default function Outlet() {
@@ -24,15 +58,26 @@ export default function Outlet() {
           {outlets.map((outlet) => (
             <div
               key={outlet.num}
-              className="rounded-brand border-[3px] border-coklat bg-krem p-6 shadow-[6px_6px_0_var(--color-merah)]"
+              className="relative rounded-brand border-[3px] border-coklat bg-krem p-6 shadow-[6px_6px_0_var(--color-merah)]"
             >
+              {outlet.isMain && (
+                <span className="absolute -top-3 right-4 rotate-3 rounded-full border-2 border-coklat bg-merah px-3 py-1 font-display text-[0.62rem] tracking-wide text-white">
+                  Outlet Utama
+                </span>
+              )}
               <div className="font-display text-[1.6rem] text-coklat opacity-25">
                 {outlet.num}
               </div>
               <h3 className="mb-1.5 text-[1.05rem] text-merah">{outlet.name}</h3>
-              <p className="text-[0.88rem] opacity-85">
-                [Alamat lengkap outlet — ganti di sini]
-              </p>
+              <p className="text-[0.88rem] opacity-85">{outlet.address}</p>
+              <a
+                href={toWhatsAppHref(outlet.whatsapp)}
+                target="_blank"
+                rel="noopener"
+                className="mt-3 inline-block text-[0.85rem] font-bold text-merah-tua hover:underline"
+              >
+                💬 {outlet.whatsapp}
+              </a>
             </div>
           ))}
         </div>

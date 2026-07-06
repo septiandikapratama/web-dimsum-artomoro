@@ -1,4 +1,8 @@
 import Button from "./ui/Button";
+import { outlets } from "./Outlet";
+import { toWhatsAppHref } from "@/lib/phone";
+
+const mainOutlet = outlets.find((outlet) => outlet.isMain) ?? outlets[0];
 
 export default function CtaFinal() {
   return (
@@ -16,7 +20,7 @@ export default function CtaFinal() {
           Order langsung ke outlet terdekat, atau pesan lewat GoFood / GrabFood / ShopeeFood.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
-          <Button href="https://wa.me/62XXXXXXXXXXX" target="_blank" rel="noopener">
+          <Button href={toWhatsAppHref(mainOutlet.whatsapp)} target="_blank" rel="noopener">
             Order via WhatsApp
           </Button>
           <Button href="#outlet" variant="putih">
