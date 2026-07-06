@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-merah: #d7261e;
+  --color-merah-tua: #9e1510;
+  --color-merah-gelap: #6e0c08;
+  --color-kuning: #ffc531;
+  --color-oranye: #f58b1f;
+  --color-krem: #fff4e0;
+  --color-coklat: #331109;
+
+  --font-display: var(--font-titan-one), cursive;
+  --font-sans: var(--font-plus-jakarta), sans-serif;
+
+  --radius-brand: 22px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.5px;
+}
+
+/* ===== hero steam / uap ===== */
+@keyframes steam-rise {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-140px) scaleX(2.2);
+    opacity: 0;
+  }
+}
+
+.steam {
+  position: absolute;
+  bottom: -10px;
+  width: 16px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  filter: blur(6px);
+  animation: steam-rise 4s infinite ease-in;
+  opacity: 0;
+}
+.steam.s1 {
+  left: 18%;
+  animation-delay: 0s;
+}
+.steam.s2 {
+  left: 24%;
+  animation-delay: 1.4s;
+}
+.steam.s3 {
+  left: 76%;
+  animation-delay: 0.7s;
+}
+.steam.s4 {
+  left: 82%;
+  animation-delay: 2.1s;
+}
+
+/* ===== hero background dots ===== */
+.hero-radials::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.07) 0 90px, transparent 91px),
+    radial-gradient(circle at 88% 30%, rgba(255, 255, 255, 0.06) 0 120px, transparent 121px),
+    radial-gradient(circle at 75% 85%, rgba(255, 255, 255, 0.05) 0 80px, transparent 81px);
+  pointer-events: none;
+}
+
+/* ===== scallop / kukusan divider ===== */
+.kukusan {
+  height: 34px;
+  background: var(--color-merah);
+  position: relative;
+}
+.kukusan::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 34px;
+  background: radial-gradient(circle at 17px -8px, transparent 24px, var(--color-krem) 25px);
+  background-size: 34px 34px;
+  background-repeat: repeat-x;
+}
+.kukusan.ke-merah {
+  background: var(--color-krem);
+}
+.kukusan.ke-merah::after {
+  background: radial-gradient(circle at 17px -8px, transparent 24px, var(--color-merah-tua) 25px);
+  background-size: 34px 34px;
+}
+
+/* ===== ticker marquee ===== */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker-track {
+  animation: ticker-scroll 22s linear infinite;
+  width: max-content;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .steam,
+  .ticker-track {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
