@@ -8,10 +8,10 @@ const words = [
 
 function TickerContent() {
   return (
-    <span className="font-display text-[1.05rem] tracking-wide text-coklat">
+    <span className="text-[0.78rem] uppercase tracking-[0.28em] text-gold/90">
       {words.map((word) => (
         <span key={word}>
-          {word} <b className="mx-2.5 text-merah">•</b>{" "}
+          {word} <span className="mx-4 text-gold/45">◆</span>{" "}
         </span>
       ))}
     </span>
@@ -21,10 +21,10 @@ function TickerContent() {
 export default function Ticker() {
   return (
     <div
-      className="overflow-hidden border-y-[3px] border-coklat bg-kuning py-3"
+      className="overflow-hidden border-y border-gold/20 bg-maroon-deep py-3.5"
       aria-hidden="true"
     >
-      <div className="ticker-track flex gap-11 whitespace-nowrap">
+      <div className="ticker-track flex gap-8 whitespace-nowrap">
         <TickerContent />
         <TickerContent />
       </div>

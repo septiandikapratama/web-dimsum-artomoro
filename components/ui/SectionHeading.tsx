@@ -12,11 +12,11 @@ type SectionHeadingProps = {
 
 export default function SectionHeading({
   eyebrow,
-  eyebrowClassName = "bg-merah text-white",
+  eyebrowClassName = "text-gold",
   title,
-  titleClassName = "text-merah",
+  titleClassName = "text-maroon",
   subtitle,
-  subtitleClassName = "",
+  subtitleClassName = "text-ink-soft",
   align = "center",
 }: SectionHeadingProps) {
   const isCenter = align === "center";
@@ -25,15 +25,21 @@ export default function SectionHeading({
     <div className={isCenter ? "text-center" : ""}>
       {eyebrow && (
         <span
-          className={`inline-block rounded-full px-4 py-1.5 text-[0.78rem] font-extrabold tracking-[2.5px] uppercase ${eyebrowClassName}`}
+          className={`inline-flex items-center gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.32em] ${eyebrowClassName} ${isCenter ? "justify-center" : ""}`}
         >
+          <span className="h-px w-8 bg-current opacity-50" />
           {eyebrow}
+          {isCenter && <span className="h-px w-8 bg-current opacity-50" />}
         </span>
       )}
-      <h2 className={`mt-4 text-[clamp(1.7rem,3.6vw,2.6rem)] ${titleClassName}`}>{title}</h2>
+      <h2
+        className={`mt-5 text-[clamp(1.9rem,4vw,3rem)] ${titleClassName}`}
+      >
+        {title}
+      </h2>
       {subtitle && (
         <p
-          className={`mt-3 max-w-[560px] text-[1.05rem] font-medium opacity-85 ${isCenter ? "mx-auto" : ""} ${subtitleClassName}`}
+          className={`mt-5 max-w-[600px] text-[1.06rem] leading-relaxed ${isCenter ? "mx-auto" : ""} ${subtitleClassName}`}
         >
           {subtitle}
         </p>

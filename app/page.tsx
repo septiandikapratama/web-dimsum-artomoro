@@ -16,9 +16,9 @@ export default function Home() {
       <Hero />
       <Ticker />
       <BestSeller />
-      <ScallopDivider toDark />
+      <ScallopDivider tone="cream" />
       <Menu />
-      <ScallopDivider />
+      <ScallopDivider tone="maroon" />
       <Dapur />
       <Outlet />
       <CtaFinal />
