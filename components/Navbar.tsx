@@ -15,9 +15,9 @@ export default function Navbar() {
         <Image
           src="/logo.png"
           alt="Dimsum Artomoro"
-          width={376}
-          height={355}
-          className="h-12 w-auto"
+          width={1254}
+          height={356}
+          className="h-10 w-auto"
           priority
         />
         <div className="hidden items-center gap-9 md:flex">

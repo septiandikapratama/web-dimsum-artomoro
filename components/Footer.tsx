@@ -7,9 +7,9 @@ export default function Footer() {
         <Image
           src="/logo.png"
           alt="Dimsum Artomoro"
-          width={376}
-          height={355}
-          className="mx-auto mb-5 h-16 w-auto"
+          width={1254}
+          height={356}
+          className="mx-auto mb-5 h-10 w-auto"
         />
         <p className="opacity-80">
           © 2026 PT Artomoro Kuliner Nusantara · Dimsum Artomoro — Lampung, Indonesia
