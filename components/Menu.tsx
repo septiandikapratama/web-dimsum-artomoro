@@ -35,35 +35,37 @@ const items = [
   {
     title: "Wonton Chili Oil",
     description: "Wonton lembut berendam chili oil pedas-wangi. Buat pencinta pedas.",
-    mini: "🌶️ Pedas",
+    mini: "Pedas",
     Icon: WontonChiliIcon,
   },
 ];
 
 export default function Menu() {
   return (
-    <section id="menu" className="bg-merah-tua py-[84px] text-white max-[820px]:py-16">
+    <section id="menu" className="bg-maroon py-28 text-cream max-[820px]:py-20">
       <div className="mx-auto max-w-[1120px] px-6">
         <SectionHeading
           eyebrow="Menu Lengkap"
-          eyebrowClassName="bg-kuning text-coklat"
+          eyebrowClassName="text-gold"
           title="Pilih Gaya Dimsum-mu"
-          titleClassName="text-kuning"
+          titleClassName="text-gold-light"
           subtitle="Lima cara menikmati dimsum Artomoro — dari yang klasik sampai yang berani pedas."
-          subtitleClassName="opacity-90"
+          subtitleClassName="text-cream/70"
         />
 
-        <div className="mt-11 grid gap-5 [grid-template-columns:repeat(auto-fit,minmax(200px,1fr))]">
+        <div className="mt-16 grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(200px,1fr))]">
           {items.map(({ title, description, mini, Icon }) => (
             <div
               key={title}
-              className="rounded-brand border-[3px] border-black/22 bg-merah px-5 py-[26px] text-center transition-[transform,background] hover:-translate-y-1.5 hover:bg-[#E23129]"
+              className="rounded-brand border border-gold/20 bg-maroon-deep/50 px-6 py-8 text-center transition duration-200 hover:-translate-y-1.5 hover:border-gold/50"
             >
-              <Icon className="mx-auto mb-3.5 h-16 w-16" />
-              <h3 className="mb-1.5 text-[1.05rem] tracking-wide">{title}</h3>
-              <p className="text-[0.85rem] opacity-85">{description}</p>
+              <div className="mx-auto mb-5 grid h-14 w-14 place-items-center rounded-full border border-gold/25">
+                <Icon className="h-9 w-9" />
+              </div>
+              <h3 className="font-display text-[1.25rem] text-gold-light">{title}</h3>
+              <p className="mt-2 text-[0.9rem] leading-relaxed text-cream/70">{description}</p>
               {mini && (
-                <span className="mt-3 inline-block rounded-full bg-kuning px-2.5 py-[3px] text-[0.7rem] font-extrabold tracking-wide text-coklat uppercase">
+                <span className="mt-4 inline-block rounded-full border border-gold/40 px-3 py-1 text-[0.64rem] font-semibold uppercase tracking-[0.2em] text-gold">
                   {mini}
                 </span>
               )}

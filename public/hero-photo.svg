@@ -1,0 +1,48 @@
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder foto produk dimsum">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="80%">
+      <stop offset="0%" stop-color="#6a0d0d"/>
+      <stop offset="55%" stop-color="#4a0606"/>
+      <stop offset="100%" stop-color="#2c0303"/>
+    </radialGradient>
+    <radialGradient id="spot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c9a227" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#c9a227" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="plate" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c1414"/>
+      <stop offset="100%" stop-color="#3a0505"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e4c766"/>
+      <stop offset="100%" stop-color="#a5831a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+
+  <!-- soft gold bokeh -->
+  <circle cx="1040" cy="150" r="220" fill="url(#spot)"/>
+  <circle cx="230" cy="560" r="180" fill="url(#spot)" opacity="0.7"/>
+  <circle cx="900" cy="600" r="120" fill="url(#spot)" opacity="0.5"/>
+
+  <!-- faint plate silhouette -->
+  <ellipse cx="640" cy="430" rx="300" ry="86" fill="#000000" opacity="0.28"/>
+  <ellipse cx="640" cy="410" rx="252" ry="70" fill="url(#plate)"/>
+  <ellipse cx="640" cy="410" rx="252" ry="70" fill="none" stroke="url(#gold)" stroke-width="2" opacity="0.55"/>
+  <ellipse cx="640" cy="404" rx="198" ry="52" fill="#2f0404" opacity="0.8"/>
+
+  <!-- steam wisps -->
+  <g fill="none" stroke="#e4c766" stroke-width="3" stroke-linecap="round" opacity="0.28">
+    <path d="M590 360 q-22 -46 8 -92 q22 -34 2 -74"/>
+    <path d="M660 356 q26 -48 -4 -96 q-22 -36 4 -78"/>
+    <path d="M712 372 q-18 -40 10 -80"/>
+  </g>
+
+  <!-- centered gold emblem -->
+  <circle cx="640" cy="286" r="30" fill="none" stroke="url(#gold)" stroke-width="1.5" opacity="0.7"/>
+  <path d="M628 300 v-30 M634 270 v30 M646 270 c8 0 8 12 0 12 v18" fill="none" stroke="url(#gold)" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+
+  <text x="640" y="520" text-anchor="middle" fill="#e4c766" fill-opacity="0.5"
+    font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="6">FOTO PRODUK</text>
+</svg>

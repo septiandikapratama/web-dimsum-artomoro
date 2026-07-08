@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 type ButtonProps = {
   href: string;
-  variant?: "primary" | "putih";
+  variant?: "primary" | "outline";
   size?: "base" | "nav";
   target?: string;
   rel?: string;
@@ -18,19 +18,19 @@ export default function Button({
   children,
 }: ButtonProps) {
   const sizing =
-    size === "nav" ? "px-5 py-[9px] text-[0.85rem]" : "px-[26px] py-3 text-base";
+    size === "nav" ? "px-5 py-2 text-[0.78rem]" : "px-8 py-3.5 text-[0.9rem]";
 
   const colors =
-    variant === "putih"
-      ? "bg-white text-coklat shadow-[0_4px_0_rgba(0,0,0,0.25)] hover:shadow-[0_6px_0_rgba(0,0,0,0.25)] active:shadow-[0_2px_0_rgba(0,0,0,0.25)]"
-      : "bg-kuning text-coklat shadow-[0_4px_0_#C98F00] hover:shadow-[0_6px_0_#C98F00] active:shadow-[0_2px_0_#C98F00]";
+    variant === "outline"
+      ? "border border-gold/60 text-gold hover:border-gold hover:bg-gold/10"
+      : "bg-gold text-maroon-deep hover:bg-gold-light shadow-[0_14px_34px_-16px_rgba(201,162,39,0.85)]";
 
   return (
     <a
       href={href}
       target={target}
       rel={rel}
-      className={`inline-block rounded-full font-display tracking-wide transition-transform duration-150 ease-out hover:-translate-y-0.5 active:translate-y-0.5 focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-kuning focus-visible:outline-offset-[3px] ${sizing} ${colors}`}
+      className={`inline-block rounded-full font-sans font-semibold tracking-[0.04em] transition-all duration-200 ease-out hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-4 ${sizing} ${colors}`}
     >
       {children}
     </a>

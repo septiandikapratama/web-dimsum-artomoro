@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Titan_One, Plus_Jakarta_Sans } from "next/font/google";
+import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const titanOne = Titan_One({
-  variable: "--font-titan-one",
-  weight: "400",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
-  weight: ["400", "500", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
@@ -27,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${titanOne.variable} ${plusJakartaSans.variable}`}>
-      <body className="overflow-x-hidden bg-krem font-sans text-coklat">
+    <html lang="id" className={`${playfair.variable} ${plusJakartaSans.variable}`}>
+      <body className="overflow-x-hidden bg-cream font-sans text-ink">
         {children}
       </body>
     </html>

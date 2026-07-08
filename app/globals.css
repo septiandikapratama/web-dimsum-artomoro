@@ -1,18 +1,22 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-merah: #d7261e;
-  --color-merah-tua: #9e1510;
-  --color-merah-gelap: #6e0c08;
-  --color-kuning: #ffc531;
-  --color-oranye: #f58b1f;
-  --color-krem: #fff4e0;
-  --color-coklat: #331109;
+  --color-maroon: #7a0c0c;
+  --color-maroon-deep: #4a0606;
+  --color-maroon-800: #611010;
+  --color-maroon-700: #8a1a1a;
+  --color-gold: #c9a227;
+  --color-gold-light: #e4c766;
+  --color-gold-dark: #a5831a;
+  --color-cream: #faf4e8;
+  --color-cream-200: #f1e7d2;
+  --color-ink: #2b1512;
+  --color-ink-soft: #6a544c;
 
-  --font-display: var(--font-titan-one), cursive;
+  --font-display: var(--font-playfair), serif;
   --font-sans: var(--font-plus-jakarta), sans-serif;
 
-  --radius-brand: 22px;
+  --radius-brand: 16px;
 }
 
 html {
@@ -24,89 +28,35 @@ h2,
 h3,
 .font-display {
   font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: 0.5px;
+  font-weight: 600;
+  line-height: 1.14;
+  letter-spacing: -0.01em;
 }
 
-/* ===== hero steam / uap ===== */
-@keyframes steam-rise {
-  0% {
-    transform: translateY(0) scaleX(1);
-    opacity: 0;
-  }
-  25% {
-    opacity: 0.7;
-  }
-  100% {
-    transform: translateY(-140px) scaleX(2.2);
-    opacity: 0;
-  }
-}
-
-.steam {
-  position: absolute;
-  bottom: -10px;
-  width: 16px;
-  height: 70px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
-  filter: blur(6px);
-  animation: steam-rise 4s infinite ease-in;
-  opacity: 0;
-}
-.steam.s1 {
-  left: 18%;
-  animation-delay: 0s;
-}
-.steam.s2 {
-  left: 24%;
-  animation-delay: 1.4s;
-}
-.steam.s3 {
-  left: 76%;
-  animation-delay: 0.7s;
-}
-.steam.s4 {
-  left: 82%;
-  animation-delay: 2.1s;
-}
-
-/* ===== hero background dots ===== */
-.hero-radials::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+/* ===== luxury hero background ===== */
+.hero-luxe {
   background:
-    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.07) 0 90px, transparent 91px),
-    radial-gradient(circle at 88% 30%, rgba(255, 255, 255, 0.06) 0 120px, transparent 121px),
-    radial-gradient(circle at 75% 85%, rgba(255, 255, 255, 0.05) 0 80px, transparent 81px);
-  pointer-events: none;
+    radial-gradient(circle at 78% 12%, rgba(201, 162, 39, 0.16), transparent 46%),
+    radial-gradient(circle at 10% 90%, rgba(201, 162, 39, 0.08), transparent 44%),
+    linear-gradient(165deg, #5c0909 0%, var(--color-maroon) 46%, #3d0505 100%);
 }
 
-/* ===== scallop / kukusan divider ===== */
-.kukusan {
-  height: 34px;
-  background: var(--color-merah);
-  position: relative;
+/* gold gradient text accent */
+.gold-text {
+  background: linear-gradient(180deg, #e8cd75 0%, #c9a227 55%, #a5831a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.kukusan::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 34px;
-  background: radial-gradient(circle at 17px -8px, transparent 24px, var(--color-krem) 25px);
-  background-size: 34px 34px;
-  background-repeat: repeat-x;
+
+/* soft luxury shadows (replace hard comic offsets) */
+.shadow-luxe {
+  box-shadow: 0 24px 50px -30px rgba(43, 21, 18, 0.55);
 }
-.kukusan.ke-merah {
-  background: var(--color-krem);
-}
-.kukusan.ke-merah::after {
-  background: radial-gradient(circle at 17px -8px, transparent 24px, var(--color-merah-tua) 25px);
-  background-size: 34px 34px;
+.shadow-luxe-gold {
+  box-shadow:
+    0 0 0 1px rgba(201, 162, 39, 0.45),
+    0 26px 55px -28px rgba(43, 21, 18, 0.6);
 }
 
 /* ===== ticker marquee ===== */
@@ -119,12 +69,11 @@ h3,
   }
 }
 .ticker-track {
-  animation: ticker-scroll 22s linear infinite;
+  animation: ticker-scroll 26s linear infinite;
   width: max-content;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .steam,
   .ticker-track {
     animation: none;
   }
