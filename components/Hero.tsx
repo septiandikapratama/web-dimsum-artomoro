@@ -17,13 +17,12 @@ export default function Hero() {
       <div className="mx-auto max-w-[1180px] px-6 pt-24 pb-16 text-center max-[820px]:pt-16">
         <span className="inline-flex items-center gap-3 text-[0.72rem] font-semibold uppercase tracking-[0.34em] text-gold">
           <span className="h-px w-8 bg-gold/50" />
-          Premium Dimsum · Lampung
+          Dimsum Pedas · Lampung
           <span className="h-px w-8 bg-gold/50" />
         </span>
 
         <h1 className="mx-auto mt-7 max-w-[15ch] text-[clamp(2.5rem,6vw,4.6rem)] font-semibold leading-[1.08]">
-          Dimsum Hangat, <em className="gold-text font-medium italic">Fresh dari Kukusan</em>,
-          Langsung ke Meja Kamu
+          Dimsum Nikmat, <em className="gold-text font-medium italic">Fresh dari Kukusan</em>,
         </h1>
 
         <p className="mx-auto mt-7 max-w-[600px] text-[1.1rem] leading-relaxed text-cream/75">
