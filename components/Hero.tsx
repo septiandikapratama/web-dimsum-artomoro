@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Button from "./ui/Button";
 
 // Ganti dengan foto asli: taruh file di /public dan ubah path ini.
 // Rekomendasi rasio ~16:9 (landscape), min 1600x900, pencahayaan hangat.
-const HERO_IMG = "/hero-photo.svg";
+const HERO_IMG = "/hero-photo.png";
 
 const stats = [
   { angka: "4.9", label: "Rating pelanggan" },
@@ -57,11 +58,13 @@ export default function Hero() {
       {/* ===== product photo ===== */}
       <div className="relative mx-auto max-w-[1000px] px-6 pb-24">
         <figure className="relative aspect-[16/9] overflow-hidden rounded-[20px] border border-gold/30 shadow-luxe">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={HERO_IMG}
-            alt="Sajian dimsum mentai premium Dimsum Artomoro"
-            className="h-full w-full object-cover"
+            alt="Tiga tray dimsum Artomoro di meja marmer gelap dengan aksen emas"
+            fill
+            sizes="(max-width: 1000px) 100vw, 1000px"
+            className="object-cover"
+            priority
           />
 
           {/* minimal rating badge */}
