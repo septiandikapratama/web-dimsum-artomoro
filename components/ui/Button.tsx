@@ -1,11 +1,15 @@
 import type { ReactNode } from "react";
 
 type ButtonProps = {
-  href: string;
+  href?: string;
   variant?: "primary" | "outline";
   size?: "base" | "nav";
   target?: string;
   rel?: string;
+  onClick?: () => void;
+  disabled?: boolean;
+  type?: "button" | "submit";
+  className?: string;
   children: ReactNode;
 };
 
@@ -15,6 +19,10 @@ export default function Button({
   size = "base",
   target,
   rel,
+  onClick,
+  disabled = false,
+  type = "button",
+  className = "",
   children,
 }: ButtonProps) {
   const sizing =
@@ -25,14 +33,19 @@ export default function Button({
       ? "border border-gold/60 text-gold hover:border-gold hover:bg-gold/10"
       : "bg-gold text-maroon-deep hover:bg-gold-light shadow-[0_14px_34px_-16px_rgba(201,162,39,0.85)]";
 
+  const base = `inline-block rounded-full font-sans font-semibold tracking-[0.04em] transition-all duration-200 ease-out hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-4 disabled:pointer-events-none disabled:opacity-40 disabled:hover:translate-y-0 ${sizing} ${colors} ${className}`;
+
+  if (href) {
+    return (
+      <a href={href} target={target} rel={rel} className={base}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <a
-      href={href}
-      target={target}
-      rel={rel}
-      className={`inline-block rounded-full font-sans font-semibold tracking-[0.04em] transition-all duration-200 ease-out hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-4 ${sizing} ${colors}`}
-    >
+    <button type={type} onClick={onClick} disabled={disabled} className={base}>
       {children}
-    </a>
+    </button>
   );
 }
