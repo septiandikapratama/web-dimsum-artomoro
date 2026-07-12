@@ -16,10 +16,7 @@ export default function Hero() {
           <span className="h-px w-8 bg-gold/50" />
         </span>
 
-        <h1
-          className="mx-auto mt-7 max-w-[15ch] text-[clamp(2.5rem,6vw,4.6rem)] leading-[1.05]"
-          style={{ fontWeight: 800 }}
-        >
+        <h1 className="mx-auto mt-7 max-w-[15ch] text-[clamp(2.5rem,6vw,4.6rem)] leading-[1.05]">
           Dimsum Nikmat, <em className="text-gold not-italic">Fresh dari Kukusan</em>,
         </h1>
 

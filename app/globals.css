@@ -13,7 +13,7 @@
   --color-ink: #2b1512;
   --color-ink-soft: #6a544c;
 
-  --font-display: var(--font-fraunces), serif;
+  --font-display: var(--font-space-grotesk), sans-serif;
   --font-sans: var(--font-plus-jakarta), sans-serif;
 
   --radius-brand: 16px;
@@ -29,8 +29,6 @@ h3,
 .font-display {
   font-family: var(--font-display);
   font-weight: 700;
-  /* opsz fixed high = large display letterforms; wght still from font-weight */
-  font-variation-settings: "opsz" 144;
   line-height: 1.08;
   letter-spacing: -0.015em;
 }
