@@ -1,5 +1,5 @@
 import Button from "./ui/Button";
-import { outlets } from "./Outlet";
+import { outlets } from "@/data/outlets";
 import { toWhatsAppHref } from "@/lib/phone";
 
 const mainOutlet = outlets.find((outlet) => outlet.isMain) ?? outlets[0];
