@@ -5,12 +5,6 @@ import Button from "./ui/Button";
 // Rekomendasi rasio ~16:9 (landscape), min 1600x900, pencahayaan hangat.
 const HERO_IMG = "/hero-photo.png";
 
-const stats = [
-  { angka: "4.9", label: "Rating pelanggan" },
-  { angka: "6", label: "Outlet di Lampung" },
-  { angka: "Fresh", label: "Dibuat tiap hari" },
-];
-
 export default function Hero() {
   return (
     <header className="hero-luxe relative overflow-hidden text-cream">
@@ -37,22 +31,6 @@ export default function Hero() {
             Cari Outlet Terdekat
           </Button>
         </div>
-
-        <dl className="mx-auto mt-14 flex max-w-[560px] flex-wrap items-center justify-center gap-x-12 gap-y-6">
-          {stats.map((stat, i) => (
-            <div
-              key={stat.label}
-              className={`text-center ${i > 0 ? "min-[520px]:border-l min-[520px]:border-gold/25 min-[520px]:pl-12" : ""}`}
-            >
-              <dt className="font-display text-[1.9rem] leading-none text-gold">
-                {stat.angka}
-              </dt>
-              <dd className="mt-2 text-[0.72rem] font-medium uppercase tracking-[0.2em] text-cream/60">
-                {stat.label}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
 
       {/* ===== product photo ===== */}
