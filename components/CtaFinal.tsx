@@ -12,7 +12,7 @@ export default function CtaFinal() {
     >
       <div className="mx-auto max-w-[1120px] px-6">
         <h2 className="mx-auto max-w-[18ch] text-[clamp(2rem,4.4vw,3.2rem)] text-cream">
-          Laper? <em className="gold-text font-medium italic">Dimsumnya udah nunggu.</em>
+          Laper? <em className="text-gold not-italic">Dimsumnya udah nunggu.</em>
         </h2>
         <p className="mx-auto mt-6 mb-10 max-w-[560px] text-[1.06rem] leading-relaxed text-cream/75">
           Order langsung ke outlet terdekat, atau pesan lewat GoFood / GrabFood / ShopeeFood.

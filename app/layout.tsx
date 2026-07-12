@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+// Variable font with the optical-size (opsz) axis so large headings render
+// with the big "display" letterforms; weight is driven via CSS font-weight.
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  style: ["normal", "italic"],
+  axes: ["opsz"],
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -28,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${playfair.variable} ${plusJakartaSans.variable}`}>
+    <html lang="id" className={`${fraunces.variable} ${plusJakartaSans.variable}`}>
       <body className="overflow-x-hidden bg-cream font-sans text-ink">
         {children}
       </body>

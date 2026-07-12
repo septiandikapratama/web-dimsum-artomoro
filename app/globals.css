@@ -13,7 +13,7 @@
   --color-ink: #2b1512;
   --color-ink-soft: #6a544c;
 
-  --font-display: var(--font-playfair), serif;
+  --font-display: var(--font-fraunces), serif;
   --font-sans: var(--font-plus-jakarta), sans-serif;
 
   --radius-brand: 16px;
@@ -28,9 +28,11 @@ h2,
 h3,
 .font-display {
   font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.14;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  /* opsz fixed high = large display letterforms; wght still from font-weight */
+  font-variation-settings: "opsz" 144;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
 }
 
 /* ===== luxury hero background ===== */
@@ -39,14 +41,6 @@ h3,
     radial-gradient(circle at 78% 12%, rgba(201, 162, 39, 0.16), transparent 46%),
     radial-gradient(circle at 10% 90%, rgba(201, 162, 39, 0.08), transparent 44%),
     linear-gradient(165deg, #5c0909 0%, var(--color-maroon) 46%, #3d0505 100%);
-}
-
-/* gold gradient text accent */
-.gold-text {
-  background: linear-gradient(180deg, #e8cd75 0%, #c9a227 55%, #a5831a 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
 
 /* soft luxury shadows (replace hard comic offsets) */
